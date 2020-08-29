@@ -1,0 +1,21 @@
+name: 'Deploy to dokku'
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+        fetch-depth: 0
+
+      - name: 'Deploy to dokku'
+        uses: fasetto/dokku-deploy@master
+        with:
+          dokku-deploy-key: ${{ secrets.DOKKU_SSH_KEY }}
+          dokku-host: '51.15.136.122'
+          dokku-app: 'prova'
