@@ -18,5 +18,5 @@ jobs:
         uses: fasetto/dokku-deploy@master
         with:
           dokku-deploy-key: ${{ secrets.DOKKU_SSH_KEY }}
-          dokku-host: '51.15.136.122'
+          dokku-host: 'vacations.rip'
           dokku-app: 'stage-prova'
