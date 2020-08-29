@@ -6,17 +6,17 @@ on:
 
 jobs:
   deploy:
-    - name: 'Deploy stage to Dokku'
-      runs-on: ubuntu-latest
+    name: 'Deploy stage to Dokku'
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-        - name: 'Deploy to dokku'
-          uses: fasetto/dokku-deploy@master
-          with:
-            dokku-deploy-key: ${{ secrets.DOKKU_SSH_KEY }}
-            dokku-host: 'vacations.rip'
-            dokku-app: 'stage-prova'
+      - name: 'Deploy to dokku'
+        uses: fasetto/dokku-deploy@master
+        with:
+          dokku-deploy-key: ${{ secrets.DOKKU_SSH_KEY }}
+          dokku-host: 'vacations.rip'
+          dokku-app: 'stage-prova'
