@@ -5,7 +5,9 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 const server = express();
 
-server.get('/', (req, res) => res.send('Una nuova provolona di stage only!'));
+server.get('/', (req, res) =>
+  res.send('Una nuova provolona di stage only yea!')
+);
 server.get('/bye', (req, res) => res.send('Goodbye World!'));
 
 server.listen(PORT, HOST, () => {
